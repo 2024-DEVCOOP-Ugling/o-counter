@@ -8,23 +8,27 @@ const transactions = [
 ];
 
 const TransactionList = () => {
+  const transaction = transactions[0]; // 첫 번째 트랜잭션만 표시
+
   return (
-    <S.Container>
-      {transactions.map((transaction, index) => (
-        <S.TransactionItem key={index}>
-          <S.DateText>{transaction.date}</S.DateText>
-          <S.AmountText>
-            {transaction.amount}원 {transaction.type}
-          </S.AmountText>
-          <S.BalanceText amount={transaction.amount}>
+    <S.Log>
+      <S.Container>
+        <S.DateText>{transaction.date}</S.DateText>
+        <S.AmountText>
+          {transaction.amount}원 {transaction.type}
+        </S.AmountText>
+      </S.Container>
+      <S.ReMainMoney>
+        <S.BalanceText amount={transaction.amount}>
+          <S.InDeMoney>
             {transaction.amount > 0
               ? `+${transaction.amount}원`
-              : `${transaction.amount}원`}{" "}
-            {transaction.balance}원
-          </S.BalanceText>
-        </S.TransactionItem>
-      ))}
-    </S.Container>
+              : `${transaction.amount}원`}
+          </S.InDeMoney>
+          <S.TotalMoney>{transaction.balance}원</S.TotalMoney>
+        </S.BalanceText>
+      </S.ReMainMoney>
+    </S.Log>
   );
 };
 

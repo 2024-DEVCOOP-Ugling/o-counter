@@ -31,6 +31,7 @@ export const MenuItem = styled.div`
 export const MenuTitle = styled.span`
   color: #fff;
   font-family: NanumSquareOTF;
+  width: 341px;
   font-size: 24px;
   font-style: normal;
   font-weight: 800;
@@ -43,7 +44,6 @@ export const MenuTitle = styled.span`
 
 export const SubMenu = styled.ul`
   display: flex;
-  width: 320px;
   flex-direction: column;
   padding: 12px 24px;
   align-items: flex-start;
